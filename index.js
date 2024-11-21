@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-// const authRoutes = require('./routes/authRoutes');
-// const groupRoutes = require('./routes/groupRoutes');
-// const messageRoutes = require('./routes/messagesRoutes');
+const authRoutes = require('./routes/authRoutes');
+const groupRoutes = require('./routes/groupRoutes');
+const messageRoutes = require('./routes/messagesRoutes');
 
 dotenv.config();
 const app = express();
@@ -18,9 +18,9 @@ app.get('/',(req,res)=>{
   res.send("Server Start")
 }
        )
-// app.use('/api/auth', authRoutes);
-// app.use('/api/groups', groupRoutes);
-// app.use('/api/message',messageRoutes)
+app.use('/api/auth', authRoutes);
+app.use('/api/groups', groupRoutes);
+app.use('/api/message',messageRoutes)
 
 // Connect to MongoDB
 const port = 5000
