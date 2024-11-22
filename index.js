@@ -13,11 +13,13 @@ app.use(express.json());
 
 // app.use(cors());
 
+// const cors = require('cors');  https://chat-application-ten-delta.vercel.app/
 app.use(cors({
-  origin: ["https://chat-application-ten-delta.vercel.app"],
-  methods: ["POST", "GET"],
-  credentials: true
+    origin: 'https://chat-application-ten-delta.vercel.app', // or '*' for all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 // Routes
 app.get('/',(req,res)=>{
