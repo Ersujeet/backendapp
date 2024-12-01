@@ -50,7 +50,7 @@ exports.login = async (req, res) => {
     }
 
     // Generate JWT token"Chatapp12345"
-    const token = jwt.sign({ userId: user._id, role: user.role }, "Chatapp12345" , {
+    const token = jwt.sign({ userId: user._id, role: user.role }, process.env.SECRET_KEY , {
       expiresIn: '1h',
     });
 
