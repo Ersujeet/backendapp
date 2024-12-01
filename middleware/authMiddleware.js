@@ -9,7 +9,7 @@ exports.authMiddleware = (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, "Chatapp12345");
+    const decoded = jwt.verify(token, prossess.env.SECRET_KEY);
     req.user = decoded; // Save user data (userId and role) to req.user
     next();
   } catch (err) {
