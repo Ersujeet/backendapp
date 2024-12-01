@@ -33,7 +33,7 @@ app.use('/api/message',messageRoutes)
 // Connect to MongoDB
 const port = 5000
 
-mongoose.connect('mongodb+srv://manofiron786:6xnZBxhdrxtOLjBe@chat.w72bq.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(prosses.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
